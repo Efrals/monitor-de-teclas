@@ -1,3 +1,18 @@
+// Inicia como ABNT
+let currentLayout = "ABNT"; // ou "ANSI"
+
+// Alterna entre os layouts ABNT e ANSI
+function toggleLayout() {
+  currentLayout = currentLayout === "ABNT" ? "ANSI" : "ABNT";
+
+  // Atualiza o título e botão
+  const title = document.getElementById("layout-title");
+  const toggleButton = document.getElementById("layout-toggle");
+  title.innerText = `Monitor de Teclas (${currentLayout})`;
+  toggleButton.innerText =
+    currentLayout === "ABNT" ? "Alternar para ANSI" : "Alternar para ABNT";
+}
+
 document.addEventListener("keyup", processKeyEvent);
 const key = document.getElementById("key");
 const code = document.getElementById("code");
@@ -24,10 +39,11 @@ document.addEventListener("keydown", function (event) {
   processKeyEvent(event);
 });
 
-//  Mostra o nome da tecla pressionada
+//  Mostra o nome da tecla pressionada em key
 function processKeyEvent(event) {
   if (event.key) {
     key.innerText = event.key;
+    // Converte e abrevia valores
     if (event.key == "Enter") {
       keyPressed.innerText = "↲";
     } else if (event.key == "Escape") {
@@ -67,25 +83,58 @@ function processKeyEvent(event) {
     }
   }
 
-  //  Mostra o nome da tecla pressionada
+  //  Mostra o nome da tecla pressionada em code
   if (event.code) {
+    code.innerText = event.code;
     if (event.code == "Space") {
       keyPressed.innerText = "Space";
-    } else if (event.code == "BracketLeft") {
-      keyPressed.innerText = "´";
-    } else if (event.code == "Quote") {
-      keyPressed.innerText = "~";
+      //  Verifica se exibe em padrão ABNT
+    } else if (currentLayout === "ABNT") {
+      if (event.code == "BracketLeft") {
+        keyPressed.innerText = "´";
+      } else if (event.code == "BracketRight") {
+        keyPressed.innerText = "[";
+      } else if (event.code == "Backslash") {
+        keyPressed.innerText = "]";
+      } else if (event.code == "Semicolon") {
+        keyPressed.innerText = "ç";
+      } else if (event.code == "Quote") {
+        keyPressed.innerText = "~";
+      } else if (event.code == "Slash") {
+        keyPressed.innerText = ";";
+      } else if (event.code == "Backquote") {
+        keyPressed.innerText = "'";
+      }
+      //  Verifica se exibe em padrão ANSI
+    } else if (currentLayout === "ANSI") {
+      if (event.code == "BracketLeft") {
+        keyPressed.innerText = "[";
+      } else if (event.code == "BracketRight") {
+        keyPressed.innerText = "]";
+      } else if (event.code == "Backslash") {
+        keyPressed.innerText = "\\";
+      } else if (event.code == "Semicolon") {
+        keyPressed.innerText = ";";
+      } else if (event.code == "Quote") {
+        keyPressed.innerText = "'";
+      } else if (event.code == "Slash") {
+        keyPressed.innerText = "/";
+      } else if (event.code == "Backquote") {
+        keyPressed.innerText = "`";
+      } else if (event.code == "IntlRo") {
+        keyPressed.innerText = "";
+      }
     } else {
       code.innerText = event.code;
     }
   }
 
-  //  Mostra o nome da tecla pressionada
+  //  Mostra o nome da tecla pressionada em which
   if (event.which) {
     which.innerText = event.which;
   }
 
-  //  Mostra o nome da tecla pressionada
+  //  Mostra o nome da tecla pressionada em keyCode
   if (event.keyCode) {
     keyCode.innerText = event.keyCode;
   }
