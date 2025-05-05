@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,19 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap"
       rel="stylesheet"
     />
+    <input
+      type="text"
+      id="key-focus"
+      style="position: absolute; left: -9999px"
+    />
   </head>
   <body>
     <div id="border-box">
-      <h1>Monitor de Teclas</h1>
+      <h1>Monitor de Teclas (ABNT)</h1>
       <div id="key-details-box">
         <div id="key-pressed-box">
-          <p><span id="key-pressed">a</span></p>
+          <p><span id="key-pressed"></span></p>
         </div>
         <div id="key-details">
           <p>Event Key: <span id="key"></span></p>
           <p>Event Code: <span id="code"></span></p>
           <p>Event Which: <span id="which"></span></p>
-          <p>Event KeyCode:<br />  ( Defasado ) <span id="keyCode"></span></p>
+          <p>Event KeyCode (Defasado): <span id="keyCode"></span></p>
         </div>
       </div>
     </div>
