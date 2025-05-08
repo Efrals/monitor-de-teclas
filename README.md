@@ -22,7 +22,7 @@ Este projeto é um **monitor visual de teclas**, com suporte para layouts de tec
 
 ## ▶️ Como Usar
 
-Entre no site: [Monitor De Teclas](https://monitordeteclas-efrals.netlify.app)
+Entre no site: [Monitor De Teclas](https://monitor-de-teclas-efrals.netlify.app)
 
 OU
 
