@@ -4,7 +4,7 @@ Este projeto é um **monitor visual de teclas**, com suporte para layouts de tec
 
 ## 📷 Preview
 
-<img src="assets/images/PreviewMonitorDeTeclas.gif" alt="Preview Monitor De Teclas" width="600"/>
+<img src="assets/images/PreviewMonitorDeTeclas.gif" alt="Preview Monitor De Teclas" width="550"/>
 
 ## 🚀 Funcionalidades
 
